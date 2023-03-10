@@ -1,0 +1,345 @@
+.area_search{
+  @include setCont(100%, auto, block);
+  .cont{
+    border: 1px solid #E0E0E0;
+    border-bottom: none;
+    border-radius: 20px 20px 0 0;
+    box-shadow: 0px 3px 10px #4588F826;
+  }
+  dl{
+    @include setCont(100%, auto, flex);
+    align-items: center;
+    padding: 15px 20px;
+    &+dl{
+      border-top: 1px solid #E0E0E0;
+    }
+    dt{
+      flex-shrink: 0;
+      width: 140px;
+      @include font(17,20,$black,$bold);
+    }
+    dd{
+      display: flex;
+      flex-wrap: wrap;
+      flex-grow: 1;
+    }
+    .bx_chk{
+      margin: 0 15px;
+    }
+  }
+  .btns{
+    @include setCont(100%, 55px, flex);
+    border: 1px solid #E0E0E0;
+    border-radius: 0 0 20px 20px;
+    padding: 0 20px;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #F8FAFF;
+    .btn{
+      min-width: 90px;
+      @include font(17, 17);
+      height: 40px;
+    }
+  }
+}
+
+.label {
+  @include setCont(null, null, inline-block, absolute, $blue);
+  @include font(14,14,$white,$bold);
+  padding: 9px 10px 8px;
+  border-radius: 3px;
+  @include font(15,15);
+  transition: all 200ms;
+  z-index: 1;
+}
+
+a.btn {
+  &.b_hert{
+    @include bgSvg(icoHert('999', $s_white), no-repeat, 50% 50%, 20px auto);
+    @include setCont(45px, 45px);
+    @include blind;
+    min-width: 0;
+    padding: 10px 5px;
+    border-radius: 8px;
+    border-color: #999; 
+  }
+}
+
+.btns{
+  display: flex;
+  align-items: center;
+  .btn {
+    @include font(20,20);
+    &.b_cart{
+      @include setCont(45px, 45px);
+      @include blind;
+      min-width: 0;
+      padding: 10px 5px;
+      border-radius: 8px;
+    }
+    &.b_cart{
+      width: 87px;
+      border: none; 
+      border-radius: 30px;
+      @include bgSvg(icoCart($s_white), no-repeat, 50% 50%, 26px auto, #ccc);
+    }
+    &.l_black {
+      margin-right: 10px;
+      border-radius: 26px;
+      height: 45px;
+      padding: 12px 10px 11px;
+    }
+  }
+}
+
+.inner{
+  max-width: 1280px;
+  min-height: 100%;
+  margin: 0 auto;
+}
+
+.container{
+  min-height: calc(100vh - 187px);
+  padding-top: 70px;
+}
+
+
+  
+.page_tit {
+  @include font(30, 30,#3D3939);
+  position: relative;
+  min-width: 133px;
+  height: 50px;
+  text-align: left;
+  vertical-align: middle;
+  letter-spacing: 0;
+  width: auto;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  padding: 0;
+  border: none;
+  &:after{
+    @include setCont(35px, 35px, block, relative);
+    @include bgSvg(icoArr("09162F"), no-repeat, 50% 50%, 17px auto);
+    margin-left: 10px;
+    box-sizing: border-box;
+    border: 2px solid #09162F;
+    border-radius: 25px;
+    top: unset;
+    right: unset;
+    transform:unset;
+  }
+}
+
+.product{
+  .location{
+    padding: 110px 0 40px;
+  }
+  .container{
+    padding: 0 0 70px;
+  }
+  .taps_txt{
+    margin: 70px 0 30px;
+  }
+  .c_top{
+    @include setCont(100%, auto, flex);
+    justify-content: space-between;
+    align-items: center;
+    .right{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .bx_search{
+        min-width: 404px;
+      }
+    }
+  }
+  .list_goods{
+    &+.pagination{
+      margin-top: 25px;
+    }
+  }
+  .pagination{
+    margin-top: 30px;
+  }
+}
+
+.bx_chk {
+  label {
+    padding-bottom: 5px;
+  }
+}
+
+.taps_txt{
+  .tap{
+    position: relative;
+    @include font(30, 30, #C1C5CB, $bold);
+    &:before{
+      @include setCont(0, 4px, inline-block, absolute, $blue);
+      bottom: -9px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    &.on{
+      color:$blue;
+      &:before{
+        width: 100%;
+      }
+    }
+    &+.tap{
+      margin-left: 48px;
+    }
+  }
+}
+
+.list_goods{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: calc(100% + 46px);
+  margin-left: -18px;
+  justify-content: flex-start;
+  dl{
+    @include setCont(100%, auto, flex);
+    @include font(15, 22);
+    align-items: center;
+    align-content: center;
+    dt{
+      flex-shrink: 0;
+    }
+    dd{
+      @include ellipsis;
+      flex-grow: 1;
+      &:before{
+        content: ":";
+        margin: -5px 4px 0;
+        vertical-align: middle;
+        display: inline-block;
+      }
+    }
+  }
+  .item{
+    @include setCont(404px, auto, block, relative, $white);
+    margin: 25px 18px;
+  }
+  .label{
+    top: 20px;
+    right: 20px;
+  }
+  .thume{
+    @include setCont(100%, 260px, block, relative,#efefef);
+    background-repeat: no-repeat !important;
+    background-size: 100% auto !important;
+    background-position: 50% 50% !important;
+    border-radius:31px;
+    box-shadow: 0px 3px 10px rgba(0,0,0,0.30);
+    transition: all 200ms;
+    .cover{
+      @include setCont(100%, 100%, flex, absolute,rgba(0,0,0,0.30));
+      justify-content: center;
+      align-items: center;
+      top:50%;
+      left:50%;
+      transform: translate(-50%,-50%);
+      border-radius: 31px;
+      overflow: hidden;
+      opacity: 0;
+      z-index: 5;
+      transition: all 300ms ease;
+      .btn{
+        padding: 19px 0;
+      }
+    }
+    .btn{
+      position: relative;
+      padding: 21px 1px 20px;
+      z-index: 5;
+      &.black{
+        background-color: rgba(0,0,0,0.75);
+        min-width: 248px;
+      }
+    }
+  }
+  .info{
+    padding: 19px 0 10px;
+    position: relative;
+    .desc{
+      @include ellipsis("multi", 3);
+      @include font(15,19,#5D5D5D);
+      margin: 10px 0;
+    }
+  }
+  .btn_myList{
+    position: absolute;
+    left:317px;
+    bottom: 11px;
+  }
+  .btns{
+    .btn{
+      position: relative;
+      z-index: 5;
+      &.l_black{
+        flex-grow: 1;
+        min-width: 148px;
+      }
+    }
+  }
+  &.ano {
+    .item {
+      width: 100%;
+      border: 1px solid #ccc;
+      border-radius: 31px;
+      padding: 25px;
+      .thume {
+        display: none;
+      }
+      .l_black {
+        flex-grow: 0;
+      }
+    }
+  }
+}
+
+.list_goods_sm{
+  display: flex;
+  flex-wrap: wrap;
+  width: calc(100% + 46px);
+  margin-left: -18px;
+  justify-content: flex-start;
+  .item{
+    @include setCont(404px, auto, block, relative, $white);
+    margin: 25px 18px;
+    padding:0;
+    border-radius: 0;
+    box-shadow: unset;
+    .label{
+      top:21px;
+      right:22px;
+    }
+    .info{
+      padding: 62px 27px 25px;
+      @include setCont(100%, 267px, block, relative, $white);
+      margin: 0 0 24px;
+      border-radius: 15px;
+      box-shadow: 0px 3px 15px rgba(133, 167, 215, 0.3);
+      @include font(14, 18,#1A1A1A);
+      .btn{
+        min-width: 248px;
+        padding: 21px 20px 20px;
+      }
+    }
+    .desc{
+      @include ellipsis("multi", 3);
+      @include font(15,19,#5D5D5D);
+      margin: 10px 0 25px;
+    }
+    .btns{
+      justify-content: center;
+      .btn.l_black{
+        min-width: 230px;
+        margin-right: 8px;
+      }
+    }
+  }
+}

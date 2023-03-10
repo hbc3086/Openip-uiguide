@@ -1,0 +1,8 @@
+@import "variable", "mixin", "svg";
+@include setFont("Pretendard", "/pretendard/PretendardRegular", 400);
+@include setFont("Pretendard", "/pretendard/PretendardBold", 500);
+
+html, body, input[type="text"],input[type="password"],input[type="tel"],input[type="email"],input[type="button"],input[type="submit"],input[type="reset"],button,select,textarea  {
+  @include fontfamily(400);
+}
+@import "common", "layout", "popup";
