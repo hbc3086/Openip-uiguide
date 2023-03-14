@@ -1,3 +1,14 @@
+.inner{
+  max-width: 1280px;
+  min-height: 100%;
+  margin: 0 auto;
+}
+
+.container{
+  min-height: calc(100vh - 187px);
+  padding: 0 0 80px;
+}
+
 .area_search{
   @include setCont(100%, auto, block);
   .cont{
@@ -6,25 +17,38 @@
     border-radius: 20px 20px 0 0;
     box-shadow: 0px 3px 10px #4588F826;
   }
-  dl{
+  .area_check{
     @include setCont(100%, auto, flex);
     align-items: center;
-    padding: 15px 20px;
-    &+dl{
+    padding: 20px 20px;
+    &+.area_check {
       border-top: 1px solid #E0E0E0;
     }
-    dt{
+    &:first-child {
+      align-items: flex-start;
+    }
+    h4{
       flex-shrink: 0;
-      width: 140px;
+      width: 90px;
       @include font(17,20,$black,$bold);
     }
-    dd{
+    .checks{
       display: flex;
       flex-wrap: wrap;
       flex-grow: 1;
     }
     .bx_chk{
       margin: 0 15px;
+      label {
+        @include font(17,20);
+        // margin-top: 17px;
+        padding-left: 34px;
+        display: flex;
+        &:before {
+          width: 22px;
+          height: 22px;
+        }
+      }
     }
   }
   .btns{
@@ -91,21 +115,8 @@ a.btn {
     }
   }
 }
-
-.inner{
-  max-width: 1280px;
-  min-height: 100%;
-  margin: 0 auto;
-}
-
-.container{
-  min-height: calc(100vh - 187px);
-  padding-top: 70px;
-}
-
-
   
-.page_tit {
+.title {
   @include font(30, 30,#3D3939);
   position: relative;
   min-width: 133px;
@@ -133,13 +144,59 @@ a.btn {
 
 .product{
   .location{
-    padding: 110px 0 40px;
-  }
-  .container{
-    padding: 0 0 70px;
+    padding: 72px 0 54px;
+    margin: 0 auto;
+    width: 1280px;
+    height: 100%;
+    text-align: left;
+    a {
+      color: $black;
+      opacity: 0.26;
+      vertical-align: middle;
+      &+a{
+        &:before{
+          @include setCont(7px, 7px, inline-block);
+          border-radius: 5px;
+          background-color: $black;
+          margin: 0 8px;
+          vertical-align: middle;
+        }
+      }
+      &:first-child{
+        @include setCont(19px, 18px);
+        @include bgSvg(icoHome("$black"), no-repeat, 50% 50%, 100%);
+        @include blind;
+        opacity: 1;
+      }
+      &:last-child{
+        opacity: 1;
+      }
+      b{
+        vertical-align: middle;
+      }
+    }
   }
   .taps_txt{
     margin: 70px 0 30px;
+    .tap{
+      position: relative;
+      @include font(30, 30, #C1C5CB, $bold);
+      &:before{
+        @include setCont(0, 4px, inline-block, absolute, $blue);
+        bottom: -9px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      &.on{
+        color:$blue;
+        &:before{
+          width: 100%;
+        }
+      }
+      &+.tap{
+        margin-left: 48px;
+      }
+    }
   }
   .c_top{
     @include setCont(100%, auto, flex);
@@ -154,7 +211,7 @@ a.btn {
       }
     }
   }
-  .list_goods{
+  .list{
     &+.pagination{
       margin-top: 25px;
     }
@@ -164,35 +221,7 @@ a.btn {
   }
 }
 
-.bx_chk {
-  label {
-    padding-bottom: 5px;
-  }
-}
-
-.taps_txt{
-  .tap{
-    position: relative;
-    @include font(30, 30, #C1C5CB, $bold);
-    &:before{
-      @include setCont(0, 4px, inline-block, absolute, $blue);
-      bottom: -9px;
-      left: 50%;
-      transform: translateX(-50%);
-    }
-    &.on{
-      color:$blue;
-      &:before{
-        width: 100%;
-      }
-    }
-    &+.tap{
-      margin-left: 48px;
-    }
-  }
-}
-
-.list_goods{
+.list{
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -226,30 +255,15 @@ a.btn {
     top: 20px;
     right: 20px;
   }
-  .thume{
+  .img{
     @include setCont(100%, 260px, block, relative,#efefef);
+    @include bg("/common/test.svg", no-repeat, 50% 50%, 260px auto);
     background-repeat: no-repeat !important;
     background-size: 100% auto !important;
     background-position: 50% 50% !important;
     border-radius:31px;
     box-shadow: 0px 3px 10px rgba(0,0,0,0.30);
     transition: all 200ms;
-    .cover{
-      @include setCont(100%, 100%, flex, absolute,rgba(0,0,0,0.30));
-      justify-content: center;
-      align-items: center;
-      top:50%;
-      left:50%;
-      transform: translate(-50%,-50%);
-      border-radius: 31px;
-      overflow: hidden;
-      opacity: 0;
-      z-index: 5;
-      transition: all 300ms ease;
-      .btn{
-        padding: 19px 0;
-      }
-    }
     .btn{
       position: relative;
       padding: 21px 1px 20px;
@@ -300,45 +314,32 @@ a.btn {
   }
 }
 
-.list_goods_sm{
-  display: flex;
-  flex-wrap: wrap;
-  width: calc(100% + 46px);
-  margin-left: -18px;
-  justify-content: flex-start;
-  .item{
-    @include setCont(404px, auto, block, relative, $white);
-    margin: 25px 18px;
-    padding:0;
-    border-radius: 0;
-    box-shadow: unset;
-    .label{
-      top:21px;
-      right:22px;
+.pagination {
+  margin-top: 25px;
+  .b_prev, .b_next {
+    @include font(22,45);
+    // line-height: 2;
+    width: 84px;
+    height: 46px;
+    text-align: center;
+    color: $white;
+    &:before {
+      display: none;
     }
-    .info{
-      padding: 62px 27px 25px;
-      @include setCont(100%, 267px, block, relative, $white);
-      margin: 0 0 24px;
-      border-radius: 15px;
-      box-shadow: 0px 3px 15px rgba(133, 167, 215, 0.3);
-      @include font(14, 18,#1A1A1A);
-      .btn{
-        min-width: 248px;
-        padding: 21px 20px 20px;
-      }
-    }
-    .desc{
-      @include ellipsis("multi", 3);
-      @include font(15,19,#5D5D5D);
-      margin: 10px 0 25px;
-    }
-    .btns{
-      justify-content: center;
-      .btn.l_black{
-        min-width: 230px;
-        margin-right: 8px;
-      }
-    }
+  }
+  .b_prev {
+    background-color: #D7E1E2;
+  }
+  .b_next {
+    background-color: $blue;
+  }
+  .num {
+    @include font(22,45);
+    width: 34px;
+    height: 46px;
+    border: 1px solid #09162F;
+    vertical-align: middle;
+    padding: 0;
+    margin: 0 15px;
   }
 }
