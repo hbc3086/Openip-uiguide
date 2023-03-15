@@ -11,8 +11,8 @@
 
 <script>
 import Alert from "~/components/Alert.vue"
-import Header from "~/layouts/header.vue"
-import Footer from '~/layouts/footer.vue'
+import Header from "~/components/layouts/header.vue"
+import Footer from '~/components/layouts/footer.vue'
 export default {
   name: "layout",
   components: {

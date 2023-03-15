@@ -1,6 +1,6 @@
 
 .b_dibs {
-  @include bgSvg(icoDibs('000', $s_white), no-repeat, 50% 50%, 20px auto);
+  @include bgSvg(icoDibs('aaa', $s_white), no-repeat, 50% 50%, 20px auto);
   @include setCont(20px, 20px);
 }
 
@@ -20,6 +20,63 @@
   @include bgSvg(icoHome("$black"), no-repeat, 50% 50%, 100%);
 }
 
+.btn, a.btn {
+  height: 40px;
+  &.b_round {
+    border-radius: 30px;
+  }
+}
+
+input {
+  &.ipt {
+    @include font(15,18);
+    height: 40px;
+  }
+}
+
+.slct {
+  height: 40px;
+}
+
+.bx_chk {
+  label {
+    @include font(17,20);
+    padding-left: 34px;
+    &:before {
+      @include bgSvg(icoChk('aaa', 1), no-repeat, 50% 50%, 15px auto);
+      width: 22px;
+      height: 22px;
+      border-radius: 0;
+    }
+  }
+  .chk {
+    &:checked {
+      &+label {
+        &:before {
+          @include bgSvg(icoChk($s_blue, 3), no-repeat, 50% 50%, 15px auto);
+          box-shadow: 0px 3px 6px #00000029;
+        }
+      }
+      &:disabled {
+        +label {
+          &:before {
+            background-size: 15px auto;
+          }
+        }
+      }
+    }
+  }
+}
+
+.label {
+  @include setCont(null, null, inline-block, relative, $blue);
+  @include font(14,14,$white,$bold);
+  padding: 9px 10px 8px;
+  border-radius: 3px;
+  transition: all 200ms;
+  z-index: 1;
+}
+
 .btns{
   display: flex;
   align-items: center;
@@ -37,7 +94,6 @@
     @include font(20,20);
     &.l_black {
       margin-right: 10px;
-      border-radius: 26px;
       height: 45px;
       padding: 12px 10px 11px;
     }
@@ -85,29 +141,25 @@
       max-width: 1280px;
       min-height: 100%;
       margin: 0 auto;
-      .title {
-        @include font(30, 30,#3D3939);
-        position: relative;
-        min-width: 133px;
-        height: 50px;
-        vertical-align: middle;
-        letter-spacing: 0;
-        width: auto;
+      .tit {
         margin-bottom: 20px;
-        display: flex;
-        align-items: center;
-        padding: 0;
-        border: none;
-        &:after{
-          @include setCont(35px, 35px, block, relative);
-          @include bgSvg(icoArr("09162F"), no-repeat, 50% 50%, 17px auto);
-          margin-left: 10px;
-          box-sizing: border-box;
-          border: 2px solid #09162F;
-          border-radius: 25px;
-          top: unset;
-          right: unset;
-          transform:unset;
+        button {
+          @include font(30, 30,#3D3939);
+          position: relative;
+          min-width: 133px;
+          height: 50px;
+          vertical-align: middle;
+          width: auto;
+          display: flex;
+          align-items: center;
+          &:after{
+            @include setCont(35px, 35px, block, relative);
+            @include bgSvg(icoArr("09162F"), no-repeat, 50% 50%, 17px auto);
+            margin-left: 10px;
+            box-sizing: border-box;
+            border: 2px solid #09162F;
+            border-radius: 25px;
+          }
         }
       }
       .area_search{
@@ -117,45 +169,38 @@
           border-bottom: none;
           border-radius: 20px 20px 0 0;
           box-shadow: 0px 3px 10px #4588F826;
-        }
-        .c_chk{
-          @include setCont(100%, auto, flex);
-          align-items: center;
-          padding: 20px 20px;
-          &+.c_chk {
-            border-top: 1px solid #E0E0E0;
-          }
-          &:first-child {
-            align-items: flex-start;
-            padding: 12px 20px;
-            h4 {
-              margin-top: 8px;
+          .unit{
+            @include setCont(100%, auto, flex);
+            align-items: center;
+            padding: 20px 20px;
+            &+.unit {
+              border-top: 1px solid #E0E0E0;
             }
-            .chks {
-              .bx_chk {
-                margin: 8px 15px;
+            &:first-child {
+              align-items: flex-start;
+              padding: 12px 20px;
+              h4 {
+                margin-top: 8px;
+              }
+              .chks {
+                .bx_chk {
+                  margin: 8px 15px;
+                }
               }
             }
-          }
-          h4{
-            flex-shrink: 0;
-            width: 90px;
-            @include font(17,20,$black,$bold);
-          }
-          .chks{
-            display: flex;
-            flex-wrap: wrap;
-            flex-grow: 1;
-            .bx_chk{
-              margin: 0 15px;
-              label {
-                @include font(17,20);
-                padding-left: 34px;
-                display: flex;
-                &:before {
-                  width: 22px;
-                  height: 22px;
-                  border-radius: 0;
+            h4{
+              flex-shrink: 0;
+              width: 90px;
+              @include font(17,20,$black,$bold);
+            }
+            .chks{
+              display: flex;
+              flex-wrap: wrap;
+              flex-grow: 1;
+              .bx_chk{
+                margin: 0 15px;
+                label {
+                  display: flex;
                 }
               }
             }
@@ -169,16 +214,14 @@
           justify-content: space-between;
           align-items: center;
           background-color: #F8FAFF;
-          .reset {
+          .b_reset {
+            @include font(17,20);
             display: flex;
-            p {
-              @include font(17,20);
-              margin-right: 5px;
-            }
-            .b_reset {
-              background-size: 15px auto;
-            };
-          }
+            background-size: 15px auto;
+            overflow: visible;
+            text-indent: 0;
+            width: 185px;
+          };
           .btn{
             min-width: 90px;
             @include font(17, 17);
@@ -228,6 +271,7 @@
       .bx_search{
         min-width: 404px;
         margin-left: 12px;
+        border-color: #D0D0D0;
         .ipt {
           height: 52px;
         }
@@ -278,7 +322,6 @@
       .label {
         @include setCont(null, null, inline-block, absolute, $blue);
         @include font(14,14,$white,$bold);
-        @include font(15,15);
         padding: 9px 10px 8px;
         border-radius: 3px;
         transition: all 200ms;
@@ -293,7 +336,6 @@
         top:50%;
         left:50%;
         transform: translate(-50%,-50%);
-        border-radius: 31px;
         overflow: hidden;
         opacity: 0;
         z-index: 5;
@@ -315,7 +357,6 @@
         z-index: 5;
         min-width: 248px;
         height: 58px;
-        border-radius: 31px;
       }
     }
     .info{
@@ -327,6 +368,7 @@
         margin: 10px 0;
       }
       .b_dibs {
+        @include bgSvg(icoDibs('000', $s_white), no-repeat, 50% 50%, 20px auto);
         @include setCont(17px, 22px);
         @include font(17,20);
         background-size: 17px auto;
@@ -351,20 +393,21 @@
 }
 
 .pagination {
-  &.type2 {
-    margin-top: 25px;
+  margin-top: 25px;
   .b_prev, .b_next {
     @include font(22,45);
     width: 84px;
     height: 46px;
     text-align: center;
     color: $white;
+    border-radius: 0;
     &:before {
       display: none;
     }
   }
   .b_prev {
     background-color: #D7E1E2;
+    margin-right: 15px;
   }
   .b_next {
     background-color: $blue;
@@ -373,10 +416,16 @@
     @include font(22,45);
     width: 34px;
     height: 46px;
-    border: 1px solid #09162F;
     vertical-align: middle;
     padding: 0;
-    margin: 0 15px;
-  }
+    margin-right: 15px;
+    background-color: $blue;
+    color: $white;
+    border-radius: 0;
+    &.on {
+      background-color: $white;
+      color: $black;
+      border: 1px solid #09162F;
+    }
   }
 }

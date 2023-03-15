@@ -1,7 +1,7 @@
 <template>
   <div class="ui_wrap ui_guide">
     <div class="ui_header">
-      <h1 class="ui_h1"><strong>프로젝트 이름</strong> Guide Page</h1>
+      <h1 class="ui_h1"><strong>오픈아이피</strong> Guide Page</h1>
       <p class="f14">해당 프로젝트에 맞게 공통가이드도 업데이트 해주세요</p>
     </div>
     <section class="ui_container">
@@ -226,7 +226,7 @@
           <div class="col">
             <h3 class="ui_h3">버튼 : .btn - button, a태크에 사용</h3>
             <div class="g_cont">
-              <p class="mb10">최소 가로값 : 40px, 세로 : 30px, font : 14px</p>
+              <p class="mb10">최소 가로값 : 40px, 세로 : 40px, font : 14px</p>
               <p class="mb10">.btn에 아래 속성들 추가로 적용 가능합니다.(중첩 가능)</p>
               <p class="mb10 ui_point">📌 Colors</p>
               <div class="mt10">
@@ -251,6 +251,10 @@
               <div class="mt10">
                 <nuxt-link to="" class="btn l_gray">.l_gray</nuxt-link>
                 <nuxt-link to="" class="btn l_black">.l_black</nuxt-link>
+              </div>
+              <p class="mt10 mb10 ui_point">📌 Round Button</p>
+              <div class="mt10">
+                <button type="button" class="btn b_round">.b_round</button>
               </div>
               <p class="mt10 ui_point">📌 Sizing</p>
               <div class="mt10">
@@ -405,7 +409,7 @@
               <input type="text" class="ipt" placeholder="입력하세요"/>
               <input type="text" class="ipt mt5" value="값"/>
               <div class="bx_search mt10">
-                <input type="text" class="ipt"/>
+                <input type="text" class="ipt" placeholder="검색어를 입력해주세요."/>
                 <button class="btn_ico b_search">검색버튼</button>
               </div>
             </div>
@@ -480,28 +484,34 @@
               <Tooltip type="!" desc="<p>ui 가이드 사용 안내<br/>블라블라 블라블라</p><p>ui 가이드 사용 안내<br/>블라블라 블라블라</p>"/>
             </div>
             <h3 class="ui_h3">Scroll style</h3>
-            <div class="flex_bw ui_scroll">
+            <div class="g_cont">
+              <div class="flex_bw ui_scroll">
                 <div class="half scroll">
-                  <strong>.scroll</strong><br/>
-                  This is the true joy in life, the being used 
-                  for a purpose recognized by yourself as a mighty
-                  ne instead of a feverish selfish little clod of
-                  ailments and grievances complaining that the world
-                  will not devote itself to making you happyby 
-                  yourself as a mighty ne instead of a feverish selfish
-                  little clod of ailments.
+                    <strong>.scroll</strong><br/>
+                    This is the true joy in life, the being used 
+                    for a purpose recognized by yourself as a mighty
+                    ne instead of a feverish selfish little clod of
+                    ailments and grievances complaining that the world
+                    will not devote itself to making you happyby 
+                    yourself as a mighty ne instead of a feverish selfish
+                    little clod of ailments.
                 </div>
                 <div class="half scroll type1">
-                  <strong>.scroll.type1</strong><br/>
-                  This is the true joy in life, the being used 
-                  for a purpose recognized by yourself as a mighty
-                  ne instead of a feverish selfish little clod of
-                  ailments and grievances complaining that the world
-                  will not devote itself to making you happyby 
-                  yourself as a mighty ne instead of a feverish selfish
-                  little clod of ailments.
+                    <strong>.scroll.type1</strong><br/>
+                    This is the true joy in life, the being used 
+                    for a purpose recognized by yourself as a mighty
+                    ne instead of a feverish selfish little clod of
+                    ailments and grievances complaining that the world
+                    will not devote itself to making you happyby 
+                    yourself as a mighty ne instead of a feverish selfish
+                    little clod of ailments.
                 </div>
               </div>
+            </div>
+            <h3 class="ui_h3">label</h3>
+            <div class="g_cont">
+              <span class="label">.label</span>
+            </div>
           </div>
         </div>
       </section>
@@ -636,15 +646,8 @@ this.$store.dispatch('ui/setAlertData', data);
           <article class="col">
             <h3 class="ui_h3 mt20">페이징 .pagination</h3>
             <div class="pagination">
-              <nuxt-link to="" class="btn_ico b_start">맨앞</nuxt-link>
-              <nuxt-link to="" class="btn_ico b_prev">이전</nuxt-link>
-              <nuxt-link to="" class="num" v-for="i in 10" :key="i" :class="{'on' : i==2}">{{ i }}</nuxt-link>
-              <nuxt-link to="" class="btn_ico b_next">다음</nuxt-link>
-              <nuxt-link to="" class="btn_ico b_end">맨뒤</nuxt-link>
-            </div>
-            <div class="pagination type2">
               <nuxt-link to="" class="btn b_prev">Prev</nuxt-link>
-              <nuxt-link to="" class="num" v-for="i in 1" :key="i" :class="{'on' : i==2}">{{ i }}</nuxt-link>
+              <nuxt-link to="" class="num" v-for="i in 5" :key="i" :class="{'on' : i==2}">{{ i }}</nuxt-link>
               <nuxt-link to="" class="btn b_next">Next</nuxt-link>
             </div>
             <h3 class="ui_h3 mt20">탭 .taps</h3>

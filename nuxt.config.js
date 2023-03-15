@@ -3,13 +3,13 @@ module.exports = {
   ** Headers of the page
   */
   head: {
-    title: '프로젝트이름',
+    title: '오픈아이피',
     meta: [
       { charset: 'utf-8' },
       //pc
       // { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       //반응형
-      { name: "viewport", content: "width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no",},
+      { name: "viewport", content: "width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no", },
       { name: "format-detection", content: "telephone=no" },
       {
         hid: "description",
@@ -30,7 +30,7 @@ module.exports = {
       {
         hid: "og:description",
         property: "og:description",
-        content:"사이트 내용",
+        content: "사이트 내용",
       },
       // {
       //   hid: "og:image",
@@ -62,7 +62,7 @@ module.exports = {
     /*
     ** Run ESLint on save
     */
-    extend (config, { isDev, isClient }) {
+    extend(config, { isDev, isClient }) {
       if (isDev && isClient) {
         config.module.rules.push({
           enforce: 'pre',

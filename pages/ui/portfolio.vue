@@ -8,10 +8,12 @@
     </div>
     <section class="container">
       <div class="inner">
-        <div class="title">정밀생산기계</div>
+        <div class="tit">
+          <button type="button">정밀생산기계</button>
+        </div>
         <div class="area_search">
           <div class="cont">
-            <div class="c_chk">
+            <div class="unit">
               <h4>판매조건</h4>
               <div class="chks">
                 <CheckBox label="매매" id="chk1_1"/>
@@ -26,7 +28,7 @@
                 <CheckBox label="기타" id="chk1_10"/>
               </div>
             </div>
-            <div class="c_chk">
+            <div class="unit">
               <h4>평가등급</h4>
               <div class="chks">
                 <CheckBox label="AA" id="chk2_1"/>
@@ -39,7 +41,7 @@
                 <CheckBox label="C" id="chk2_8"/>
               </div>
             </div>
-            <div class="c_chk">
+            <div class="unit">
               <h4>추천사유</h4>
               <div class="chks">
                 <CheckBox label="경쟁력" id="chk3_1"/>
@@ -49,7 +51,7 @@
                 <CheckBox label="스타트업" id="chk3_5"/>
               </div>
             </div>
-            <div class="c_chk">
+            <div class="unit">
               <h4>주요출원인</h4>
               <div class="chks">
                 <CheckBox label="서울대학교" id="chk4_1"/>
@@ -59,10 +61,7 @@
             </div>
           </div>
           <div class="btns">
-            <div class="reset">
-              <p>전체초기화</p>
-              <button class="btn_ico b_reset">전체 초기화</button>
-            </div>
+            <button class="btn_ico b_reset">전체 초기화</button>
             <button class="btn b_gray">검색</button>
           </div>
         </div>
@@ -76,7 +75,7 @@
             <div class="right">
               <button class="btn_ico b_dibs" title="찜버튼">찜</button>
               <div class="bx_search">
-                <input type="text" class="ipt"/>
+                <input type="text" class="ipt" placeholder="검색어를 입력해주세요."/>
                 <button class="btn_ico b_search">검색버튼</button>
               </div>
             </div>
@@ -86,7 +85,7 @@
               <div class="thumb">
                 <span class="label">평가등급 : AA</span>
                 <div class="detail">
-                  <button class="btn b_black">자세히 보기</button>
+                  <button class="btn b_black b_round">자세히 보기</button>
                 </div>
               </div>
               <div class="info">
@@ -106,14 +105,14 @@
                 <button class="btn_ico b_dibs">1,550</button>
               </div>
               <div class="btns">
-                <NuxtLink to="" class="btn l_black">신청하기</NuxtLink>
+                <NuxtLink to="" class="btn l_black b_round">신청하기</NuxtLink>
                 <NuxtLink to="" class="btn_ico b_cart b_gray">장바구니</NuxtLink>
               </div>
             </div>
           </div>
-          <div class="pagination type2">
+          <div class="pagination">
             <nuxt-link to="" class="btn b_prev">Prev</nuxt-link>
-            <nuxt-link to="" class="num" v-for="i in 1" :key="i" :class="{'on' : i==2}">{{ i }}</nuxt-link>
+            <nuxt-link to="" class="num" v-for="i in 1" :key="i" :class="{'on' : i==1}">{{ i }}</nuxt-link>
             <nuxt-link to="" class="btn b_next">Next</nuxt-link>
           </div>
         </div>

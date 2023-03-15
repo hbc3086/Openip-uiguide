@@ -1,7 +1,7 @@
 <template>
   <div class="ui_wrap">
     <header class="ui_header">
-      <h1 class="ui_h1"><strong>프로젝트 이름</strong> Index Page</h1>
+      <h1 class="ui_h1"><strong>오픈아이피</strong> Index Page</h1>
     </header>
     <div class="ui_container">
       <h2 class="ui_h2">구축 전 필독사항</h2>
@@ -35,18 +35,13 @@
           <tbody>
             <tr>
               <td><NuxtLink to="/ui/guide" target="_blank" class="ui_link">모든 프로젝트 공통 UI 가이드 <em class="ui_new">new</em></NuxtLink></td>
-              <td><span class="ui_label">YN</span>이유나</td>
-              <td>22.2.09</td>
-            </tr>
-            <tr>
-              <td><NuxtLink to="/ui/portfolio" target="_blank" class="ui_link">포트폴리오 - 상세페이지<em class="ui_new">new</em></NuxtLink></td>
-              <td><span class="ui_label type1">BC</span>황병철</td>
+              <td><span class="ui_label">BC</span>황병철</td>
               <td>22.3.15</td>
             </tr>
             <tr>
-              <td><NuxtLink to="/ui" target="_blank" class="ui_link">페이지 이름</NuxtLink></td>
-              <td><span class="ui_label type2">NM</span>홍길동</td>
-              <td>22.2.09</td>
+              <td><NuxtLink to="/ui/portfolio" target="_blank" class="ui_link">포트폴리오 - 상세페이지<em class="ui_new">new</em></NuxtLink></td>
+              <td><span class="ui_label">BC</span>황병철</td>
+              <td>22.3.15</td>
             </tr>
           </tbody>
         </table>
