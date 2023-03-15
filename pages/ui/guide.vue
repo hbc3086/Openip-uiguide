@@ -378,7 +378,23 @@
                   <span class="ml5"> 비활성화 :</span> 
                   <button type="button" class="btn_ico b_down" disabled="disabled">아래 버튼</button>
                   <nuxt-link to="" class="btn_ico bg_blue c_white dis b_down">아래 버튼</nuxt-link>
-                </div>   
+                </div>
+                <div class="flex_a_center mt5">
+                  .btn_ico.b_dibs : 
+                  <button type="button" class="btn_ico b_dibs">찜 버튼</button>
+                </div>
+                <div class="flex_a_center mt5">
+                  .btn_ico.b_cart : 
+                  <button type="button" class="btn_ico b_cart">카트 버튼</button>
+                </div>
+                <div class="flex_a_center mt5">
+                  .btn_ico.b_login : 
+                  <button type="button" class="btn_ico b_login">로그인 버튼</button>
+                </div>
+                <div class="flex_a_center mt5">
+                  .btn_ico.b_home : 
+                  <button type="button" class="btn_ico b_home">홈 버튼</button>
+                </div>
               </div>
             </div>
           </div>
@@ -626,6 +642,11 @@ this.$store.dispatch('ui/setAlertData', data);
               <nuxt-link to="" class="btn_ico b_next">다음</nuxt-link>
               <nuxt-link to="" class="btn_ico b_end">맨뒤</nuxt-link>
             </div>
+            <div class="pagination type2">
+              <nuxt-link to="" class="btn b_prev">Prev</nuxt-link>
+              <nuxt-link to="" class="num" v-for="i in 1" :key="i" :class="{'on' : i==2}">{{ i }}</nuxt-link>
+              <nuxt-link to="" class="btn b_next">Next</nuxt-link>
+            </div>
             <h3 class="ui_h3 mt20">탭 .taps</h3>
             <div class="taps">
               <button type="button" class="tap">탭1</button>
@@ -647,6 +668,7 @@ import RadioBox from "~/components/form/RadioBox";
 import Tooltip from "~/components/common/Tooltip";
 
 export default {
+  layout:"none",
   data() {
     return {
       // popup: false,

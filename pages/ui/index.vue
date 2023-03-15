@@ -39,9 +39,9 @@
               <td>22.2.09</td>
             </tr>
             <tr>
-              <td><NuxtLink to="/ui" target="_blank" class="ui_link">페이지 이름</NuxtLink></td>
-              <td><span class="ui_label type1">NM</span>홍길동</td>
-              <td>22.2.09</td>
+              <td><NuxtLink to="/ui/portfolio" target="_blank" class="ui_link">포트폴리오 - 상세페이지<em class="ui_new">new</em></NuxtLink></td>
+              <td><span class="ui_label type1">BC</span>황병철</td>
+              <td>22.3.15</td>
             </tr>
             <tr>
               <td><NuxtLink to="/ui" target="_blank" class="ui_link">페이지 이름</NuxtLink></td>
@@ -59,6 +59,7 @@
 
 export default {
   name:"index",
+  layout:"none",
   data() {
     return {
     };

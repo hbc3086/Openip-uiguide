@@ -10,7 +10,7 @@
         <div class="menu">인기테마</div>
         <div class="menu">고객지원</div>
       </div>
-      <button class="h_login btn_ico">로그인</button>
+      <button class="b_login btn_ico">로그인</button>
     </div>
   </header>
 </template>

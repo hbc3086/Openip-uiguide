@@ -24,7 +24,7 @@ header {
         @include font(18,70,#101010, $bold);
       }
     }
-    .h_login {
+    .b_login {
         @include setCont(47px, 47px, block, relative);
         @include bgSvg(icoLogin("fff"), no-repeat, 50% 50%, 22px auto,$blue);
         padding: 0;
