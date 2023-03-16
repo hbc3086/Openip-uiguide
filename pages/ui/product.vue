@@ -67,8 +67,8 @@
         </div>
         <div class="content">
           <div class="tabs">
-            <NuxtLink to="/ui/portfolio" class="tab on">포트폴리오</NuxtLink>
-            <NuxtLink to="/ui/product" class="tab">단일상품</NuxtLink>
+            <NuxtLink to="/ui/portfolio" class="tab">포트폴리오</NuxtLink>
+            <NuxtLink to="/ui/product" class="tab on">단일상품</NuxtLink>
           </div>
           <div class="c_top">
             <p>총 <b class="txt_blue f25">10</b>개의 상품이 검색되었습니다.</p>
@@ -80,29 +80,22 @@
               </div>
             </div>
           </div>
-          <div class="list">
+          <div class="list product">
             <div class="item" v-for="i in 12" :key="i">
-              <div class="thumb">
+              <div class="info">
                 <span class="label">평가등급 : AA</span>
                 <div class="detail">
                   <button class="btn b_black b_round">자세히 보기</button>
                 </div>
-              </div>
-              <div class="info">
-                <h4>의료용 로봇 및 의료서비스 로봇 특허</h4>
+                <h2>의료용 로봇 및 의료서비스 로봇 특허</h2>
                 <div class="desc">
+                  종합 방산 기업인 한화디펜스의 특허입니다. 무인을 포함한 비행체 제어의 장치와 관리 방법등에 대한 특허 중 높은 기술력과 상위 등 급을 가진 특허들을 모았습니다.
+                  종합 방산 기업인 한화디펜스의 특허입니다. 무인을 포함한 비행체 제어의 장치와 관리 방법등에 대한 특허 중 높은 기술력과 상위 등 급을 가진 특허들을 모았습니다.
                   종합 방산 기업인 한화디펜스의 특허입니다. 무인을 포함한 비행체 제어의 장치와 관리 방법등에 대한 특허 중 높은 기술력과 상위 등 급을 가진 특허들을 모았습니다.
                 </div>
                 <dl>
                   <dt>제&nbsp;&nbsp;공&nbsp;&nbsp;자</dt><dd>서울대학교산학협력단, 전남대학교산학협력단</dd>
                 </dl>
-                <dl>
-                  <dt>특&nbsp;&nbsp;허&nbsp;&nbsp;수</dt><dd>5개</dd>
-                </dl>
-                <dl>
-                  <dt>거래방식</dt><dd>영구임대</dd>
-                </dl>
-                <button class="btn_ico b_dibs">1,550</button>
               </div>
               <div class="btns">
                 <NuxtLink to="" class="btn l_black b_round">신청하기</NuxtLink>

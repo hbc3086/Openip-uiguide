@@ -43,6 +43,11 @@
               <td><span class="ui_label">BC</span>황병철</td>
               <td>22.3.15</td>
             </tr>
+            <tr>
+              <td><NuxtLink to="/ui/product" target="_blank" class="ui_link">단일상품 - 상세페이지<em class="ui_new">new</em></NuxtLink></td>
+              <td><span class="ui_label">BC</span>황병철</td>
+              <td>22.3.16</td>
+            </tr>
           </tbody>
         </table>
       </div>
