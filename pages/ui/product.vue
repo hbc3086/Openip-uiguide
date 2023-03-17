@@ -1,6 +1,6 @@
 <template>
   <div class="portfolio">
-    <h1 class="blind">단일상품 - 리스트페이지</h1>
+    <h1 class="blind">단일상품</h1>
     <div class="location">
       <nuxt-link to="" class="btn_ico b_home">홈</nuxt-link>
       <nuxt-link to="">산업분류</nuxt-link>

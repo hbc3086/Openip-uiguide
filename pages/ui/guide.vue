@@ -399,6 +399,10 @@
                   .btn_ico.b_home : 
                   <button type="button" class="btn_ico b_home">홈 버튼</button>
                 </div>
+                <div class="flex_a_center mt5">
+                  .btn_ico.b_detail : 
+                  <button type="button" class="btn_ico b_detail">상세보기 버튼</button>
+                </div>
               </div>
             </div>
           </div>

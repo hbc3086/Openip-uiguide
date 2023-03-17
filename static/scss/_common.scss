@@ -20,6 +20,11 @@
   @include bgSvg(icoHome("$black"), no-repeat, 50% 50%, 100%);
 }
 
+.b_detail {
+  @include setCont(auto);
+  @include bgSvg(icoDetail("$black"), no-repeat, 50% 50%, 15px auto);
+}
+
 .btn, a.btn {
   height: 40px;
   &.b_round {
@@ -66,6 +71,16 @@ input {
       }
     }
   }
+  &.t_round {
+    label {
+      &:before {
+        width: 20px;
+        height: 20px;
+        top: 0;
+        background-size: 15px !important;
+      }
+    }
+  }
 }
 
 .label {
@@ -99,41 +114,214 @@ input {
     }
   }
 }
-  
-.portfolio{
-  .location{
-    padding: 72px 0 54px;
-    margin: 0 auto;
-    width: 1280px;
-    height: 100%;
-    text-align: left;
-    a {
-      color: $black;
-      opacity: 0.26;
-      vertical-align: middle;
-      &+a{
-        &:before{
-          @include setCont(7px, 7px, inline-block);
-          border-radius: 5px;
-          background-color: $black;
-          margin: 0 8px;
-          vertical-align: middle;
-        }
-      }
-      &:last-child{
-        opacity: 1;
-      }
-      b{
+
+.conatiner {
+  min-height: calc(100vh - 187px);
+  padding: 0 0 80px;
+}
+
+.inner {
+  max-width: 1280px;
+  min-height: 100%;
+  margin: 0 auto;
+}
+
+.location{
+  padding: 72px 0 54px;
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+  text-align: left;
+  a {
+    color: $black;
+    opacity: 0.26;
+    vertical-align: middle;
+    &+a{
+      &:before{
+        @include setCont(7px, 7px, inline-block);
+        border-radius: 5px;
+        background-color: $black;
+        margin: 0 8px;
         vertical-align: middle;
       }
-      &.b_home {
-        @include setCont(19px, 18px);
-        @include bgSvg(icoHome("$black"), no-repeat, 50% 50%, 100%);
-        @include blind;
+    }
+    &:last-child{
+      opacity: 1;
+    }
+    b{
+      vertical-align: middle;
+    }
+    &.b_home {
+      @include setCont(19px, 18px);
+      @include bgSvg(icoHome("$black"), no-repeat, 50% 50%, 100%);
+      @include blind;
+      opacity: 1;
+    }
+  }
+}
+
+dl{
+  @include setCont(100%, auto, flex);
+  @include font(15, 22);
+  align-items: center;
+  align-content: center;
+  dt{
+    flex-shrink: 0;
+  }
+  dd{
+    @include ellipsis;
+    flex-grow: 1;
+    &:before{
+      content: ":";
+      margin: -5px 4px 0;
+      vertical-align: middle;
+      display: inline-block;
+    }
+  }
+}
+
+.list{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: calc(100% + 46px);
+  margin-left: -18px;
+  justify-content: flex-start;
+  .item{
+    @include setCont(404px, auto, block, relative, $white);
+    margin: 30px 17px 20px;
+  }
+  .thumb{
+    @include setCont(100%, 260px, block, relative,#efefef);
+    @include bg("/common/test.svg", no-repeat, 50% 50%, 100% auto);
+    border-radius:31px;
+    box-shadow: 0px 3px 10px rgba(0,0,0,0.30);
+    transition: all 200ms;
+    .label {
+      @include setCont(null, null, inline-block, absolute, $blue);
+      @include font(14,14,$white,$bold);
+      padding: 9px 10px 8px;
+      border-radius: 3px;
+      transition: all 200ms;
+      z-index: 1;
+      top: 20px;
+      right: 20px;
+    }
+    .detail{
+      @include setCont(100%, 100%, flex, absolute,rgba(0,0,0,0.30));
+      border-radius: 31px;
+      justify-content: center;
+      align-items: center;
+      top:50%;
+      left:50%;
+      transform: translate(-50%,-50%);
+      overflow: hidden;
+      opacity: 0;
+      z-index: 5;
+      transition: all 300ms ease;
+    }
+    &:hover{
+      background-size: 125% auto;
+      .detail{
         opacity: 1;
+        .btn {
+          opacity: 0.75;
+        }
+      }
+    }
+    .btn{
+      @include font(15,15);
+      position: relative;
+      padding: 21px 1px 20px;
+      z-index: 5;
+      min-width: 248px;
+      height: 58px;
+    }
+  }
+  .info{
+    padding: 19px 0 10px;
+    position: relative;
+    .desc{
+      @include ellipsis("multi", 3);
+      @include font(15,19,#5D5D5D);
+      margin: 10px 0;
+    }
+    .b_dibs {
+      @include bgSvg(icoDibs('000', $s_white), no-repeat, 50% 50%, 20px auto);
+      @include setCont(17px, 22px);
+      @include font(17,20);
+      background-size: 17px auto;
+      overflow: visible;
+      text-indent: 25px;
+      position: absolute;
+      left: 330px;
+      bottom: 11px;
+    }
+  }
+  .btns{
+    .btn{
+      position: relative;
+      min-width: 285px;
+      flex-grow: 1;
+    }
+  }
+  &.product {
+    .info {
+      @include setCont(100%, 260px, block, relative, $white);
+      border-radius:22px;
+      box-shadow: 0px 3px 10px #86B0FF4D;
+      transition: all 200ms;
+      padding: 65px 23px 25px;
+      .label {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+      }
+      .detail{
+        @include setCont(100%, 100%, flex, absolute,rgba(0,0,0,0.30));
+        border-radius: 22px;
+        justify-content: center;
+        align-items: center;
+        top:50%;
+        left:50%;
+        transform: translate(-50%,-50%);
+        overflow: hidden;
+        opacity: 0;
+        z-index: 5;
+        transition: all 300ms ease;
+        .btn{
+          @include font(15,15);
+          position: relative;
+          padding: 21px 1px 20px;
+          z-index: 5;
+          min-width: 248px;
+          height: 58px;
+        }
+      }
+      &:hover{
+        .detail{
+          opacity: 1;
+          .btn {
+            opacity: 0.75;
+          }
+        }
+      }
+      .desc {
+        margin: 10px 0 26px;
+      }
+    }
+    .btns{
+      margin-top: 25px;
+      justify-content: center;
+      .btn{
+        flex-grow: 0;
+        min-width: 230px;
       }
     }
   }
+}
+  
+.portfolio{
   .container{
     min-height: calc(100vh - 187px);
     padding: 0 0 80px;
@@ -282,160 +470,207 @@ input {
       }
     }
   }
-  .list{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    width: calc(100% + 46px);
-    margin-left: -18px;
-    padding-top: 5px;
-    justify-content: flex-start;
-    dl{
-      @include setCont(100%, auto, flex);
-      @include font(15, 22);
-      align-items: center;
-      align-content: center;
-      dt{
-        flex-shrink: 0;
-      }
-      dd{
-        @include ellipsis;
-        flex-grow: 1;
-        &:before{
-          content: ":";
-          margin: -5px 4px 0;
-          vertical-align: middle;
-          display: inline-block;
-        }
-      }
-    }
-    .item{
-      @include setCont(404px, auto, block, relative, $white);
-      margin: 30px 17px 20px;
-    }
-    .thumb{
-      @include setCont(100%, 260px, block, relative,#efefef);
-      @include bg("/common/test.svg", no-repeat, 50% 50%, 100% auto);
-      border-radius:31px;
-      box-shadow: 0px 3px 10px rgba(0,0,0,0.30);
-      transition: all 200ms;
-      .label {
-        @include setCont(null, null, inline-block, absolute, $blue);
-        @include font(14,14,$white,$bold);
-        padding: 9px 10px 8px;
-        border-radius: 3px;
-        transition: all 200ms;
-        z-index: 1;
-        top: 20px;
-        right: 20px;
-      }
-      .detail{
-        @include setCont(100%, 100%, flex, absolute,rgba(0,0,0,0.30));
-        border-radius: 31px;
-        justify-content: center;
-        align-items: center;
-        top:50%;
-        left:50%;
-        transform: translate(-50%,-50%);
-        overflow: hidden;
-        opacity: 0;
-        z-index: 5;
-        transition: all 300ms ease;
-      }
-      &:hover{
-        background-size: 125% auto;
-        .detail{
-          opacity: 1;
-          .btn {
-            opacity: 0.75;
+}
+
+.port_detail {
+  .location {
+    background-color: #F8FAFF;
+  }
+  .area {
+    display: inline-block;
+    width: 100%;
+  }
+  .area:first-child {
+    background-color: #F8FAFF;
+    padding-bottom: 72px;
+    .inner {
+      .i_left {
+        @include setCont(875px, auto, inline-block, relative, $white);
+        box-shadow: 0px 3px 10px #4588F826;
+        border-radius: 20px;
+        margin-right: 25px;
+        .tit {
+          padding: 31px 25px 30px;
+          background-color: #FAFAFA;
+          h1 {
+            @include font(28,33);
+            margin-bottom: 17px;
+          }
+          p {
+            @include font(15,17);
+            position: absolute;
+            top: 30px;
+            right: 25px;
           }
         }
-      }
-      .btn{
-        @include font(15,15);
-        position: relative;
-        padding: 21px 1px 20px;
-        z-index: 5;
-        min-width: 248px;
-        height: 58px;
-      }
-    }
-    .info{
-      padding: 19px 0 10px;
-      position: relative;
-      .desc{
-        @include ellipsis("multi", 3);
-        @include font(15,19,#5D5D5D);
-        margin: 10px 0;
-      }
-      .b_dibs {
-        @include bgSvg(icoDibs('000', $s_white), no-repeat, 50% 50%, 20px auto);
-        @include setCont(17px, 22px);
-        @include font(17,20);
-        background-size: 17px auto;
-        overflow: visible;
-        text-indent: 25px;
-        position: absolute;
-        left: 330px;
-        bottom: 11px;
-      }
-    }
-    .btns{
-      .btn{
-        position: relative;
-        min-width: 285px;
-      }
-    }
-    &.product {
-      .info {
-        @include setCont(100%, 260px, block, relative, $white);
-        border-radius:22px;
-        box-shadow: 0px 3px 10px #86B0FF4D;
-        transition: all 200ms;
-        padding: 65px 23px 25px;
-        .label {
-          position: absolute;
-          top: 20px;
-          right: 20px;
-        }
-        .detail{
-          @include setCont(100%, 100%, flex, absolute,rgba(0,0,0,0.30));
-          border-radius: 22px;
-          justify-content: center;
-          align-items: center;
-          top:50%;
-          left:50%;
-          transform: translate(-50%,-50%);
-          overflow: hidden;
-          opacity: 0;
-          z-index: 5;
-          transition: all 300ms ease;
-          .btn{
-            @include font(15,15);
-            position: relative;
-            padding: 21px 1px 20px;
-            z-index: 5;
-            min-width: 248px;
-            height: 58px;
+        .cont {
+          padding: 25px;
+          .chk_all {
+            display: flex;
+            justify-content: flex-end;
+            label {
+              padding-left: 25px;
+            }
           }
-        }
-        &:hover{
-          .detail{
-            opacity: 1;
-            .btn {
-              opacity: 0.75;
+          .detail_list {
+            display: flex;
+            flex-direction: column;
+            .item {
+              width: 100%;
+              height: 95px;
+              border: 1px solid #E6E6E6;
+              border-radius: 20px;
+              padding: 25px 20px 26px 52px;
+              margin-top: 11px;
+              .bx_chk {
+                position: absolute;
+                z-index: 9999;
+                label {
+                  &:before {
+                    width: 23px;
+                    height: 23px;
+                    top: 10px;
+                    left: -38px;
+                    background-size: 18px !important;
+                    background-color: $white;
+                  }
+                }
+              }
+              dl {
+                dt {
+                  @include font(16,19);
+                }
+                &:last-child {
+                  dt {
+                    color: $blue;
+                  }
+                  dd {
+                    @include font(12,14);
+                    margin-left: 5px;
+                    &:before {
+                      display: none;
+                    }
+                  }
+                }
+              }
+              .btn_ico {
+                @include font(14,20);
+                position: absolute;
+                display: flex;
+                flex-direction: row-reverse;
+                text-indent: 0;
+                height: 30px;
+                &:first-child {
+                  width: 150px;
+                  right: 126px;
+                  background-position: 50% 20%;
+                }
+                &:last-child {
+                  width: 120px;
+                  right: 46px;
+                  background-position: 50% 0;
+                }
+              }
+              &.on {
+                border-color: #4588F8;
+                background-color: #4588F81A;
+              }
             }
           }
         }
-        .desc {
-          margin: 10px 0 26px;
+      }
+      .i_right {
+        @include setCont(380px, auto, inline-block, relative, $white);
+        float: right;
+        box-shadow: 0px 3px 10px #4588F826;
+        border-radius: 20px;
+        padding: 25px;
+        .thumb {
+          @include setCont(330px, 260px, block, relative,#efefef);
+          @include bg("/common/test.svg", no-repeat, 50% 50%, 330px auto);
+          border-radius:31px;
+          box-shadow: 0px 3px 10px rgba(0,0,0,0.30);
+          margin: 0 auto 20px;
+        }
+        .ipt_slct {
+          display: flex;
+          flex-direction: column;
+          p {
+            @include font(16,19);
+            display: flex;
+            align-items: center;
+            &:before {
+              @include setCont(6px,6px, block, relative, $blue);
+              border-radius: 50%;
+              margin-right: 5px;
+            }
+          }
+          .bx_slct {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 9px;
+            .slct {
+              width: 259px;
+              .s_tit {
+                @include font(14,16);
+                border-radius: 24px;
+              }
+            }
+          }
+          .bx_ipt {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 9px;
+            .ipt {
+              @include font(14,16);
+              width: 259px;
+              border-radius: 24px;
+            }
+            &:last-child {
+              align-items: flex-start;
+              p {
+                margin-top: 15px;
+              }
+              .ipt {
+                height: 108px;
+              }
+            }
+          }
+        }
+        .btns{
+          margin-top: 25px;
+          .btn{
+            position: relative;
+            min-width: 255px;
+            &.l_black {
+              margin-right: 5px;
+            }
+          }
+          .btn_ico {
+            width: 70px;
+          }
         }
       }
-      .btns{
-        margin-top: 25px;
+    }
+  }
+  .area:last-child {
+    padding: 70px 0 50px;
+    .inner {
+      h1 {
+        @include font(35,60);
+      }
+      .btns {
         justify-content: center;
-        .btn{
-          min-width: 230px;
+        .btn {
+          &.l_gray {
+            @include font(18,54);
+            min-width: 152px;
+            height: 57px;
+            color: $black;
+            margin-top: 25px;
+          }
         }
       }
     }
