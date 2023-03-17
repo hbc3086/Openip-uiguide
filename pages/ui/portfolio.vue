@@ -85,7 +85,7 @@
               <div class="thumb">
                 <span class="label">평가등급 : AA</span>
                 <div class="detail">
-                  <button class="btn b_black b_round">자세히 보기</button>
+                  <NuxtLink to="/ui/portdetail" class="btn b_black b_round">자세히 보기</NuxtLink>
                 </div>
               </div>
               <div class="info">

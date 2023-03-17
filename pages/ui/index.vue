@@ -48,6 +48,16 @@
               <td><span class="ui_label">BC</span>황병철</td>
               <td>22.3.16</td>
             </tr>
+            <tr>
+              <td><NuxtLink to="/ui/portdetail" target="_blank" class="ui_link">포트폴리오 - 자세히보기<em class="ui_new">new</em></NuxtLink></td>
+              <td><span class="ui_label">BC</span>황병철</td>
+              <td>22.3.16</td>
+            </tr>
+            <tr>
+              <td><NuxtLink to="/ui/proddetail" target="_blank" class="ui_link">단일상품 - 자세히보기<em class="ui_new">new</em></NuxtLink></td>
+              <td><span class="ui_label">BC</span>황병철</td>
+              <td>22.3.17</td>
+            </tr>
           </tbody>
         </table>
       </div>

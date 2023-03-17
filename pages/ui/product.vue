@@ -85,7 +85,7 @@
               <div class="info">
                 <span class="label">평가등급 : AA</span>
                 <div class="detail">
-                  <button class="btn b_black b_round">자세히 보기</button>
+                  <NuxtLink to="/ui/proddetail" class="btn b_black b_round">자세히 보기</NuxtLink>
                 </div>
                 <h2>의료용 로봇 및 의료서비스 로봇 특허</h2>
                 <div class="desc">

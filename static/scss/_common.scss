@@ -578,6 +578,40 @@ dl{
             }
           }
         }
+        &.prod {
+          .cont {
+            dl {
+              margin-bottom: 9px;
+            }
+            .c_top {
+              min-height: 227px;
+            }
+            .c_bottom {
+              border-top: 1px dashed #707070;
+              .b_top {
+                display: flex;
+                align-items: center;
+                margin-top: 14px;
+                p {
+                  @include font(15,0);
+                  margin-right: 5px;
+                }
+                .btn {
+                  @include font(10,0);
+                  padding: 0;
+                  width: 59px;
+                  height: 18px;
+                  border-radius: 9px
+                }
+              }
+              .desc {
+                @include font(13,20);
+                color: #3D3939;
+                margin-top: 9px;
+              }
+            }
+          }
+        }
       }
       .i_right {
         @include setCont(380px, auto, inline-block, relative, $white);
@@ -650,6 +684,41 @@ dl{
           }
           .btn_ico {
             width: 70px;
+          }
+        }
+      }
+      .i_bottom {
+        display: inline-block;
+        margin-top: 24px;
+        p {
+          @include font(16,19);
+          display: flex;
+          align-items: center;
+          margin: 30px 0 11px;
+          &:before {
+            @include setCont(6px,6px, block, relative, $blue);
+            border-radius: 50%;
+            margin-right: 5px;
+          }
+          &:after {
+            @include setCont(12px,7px,block,relative);
+            @include bgSvg(arrDown('000'), no-repeat, 50% 50%, 12px auto);
+            margin-left: 10px;
+          }
+        }
+        .btns {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+          .btn {
+            @include font(16,29);
+            color: $black;
+            background-color: $white;
+            box-shadow: 0px 0px 10px #00000026;
+            width: 202px;
+            height: 49px;
+            margin-top: 13px;
+            border-radius: 15px;
           }
         }
       }
